@@ -162,6 +162,11 @@
               <div class="video-item">
                 <iframe src="" allowfullscreen></iframe>
               </div>
+              <div class="view-more-btn">
+                <button class="btn" id="viewMoreVideosBtn">
+                  Click here for more videos
+                </button>
+              </div>
             </div>
           </div>
 
@@ -193,6 +198,11 @@
                 src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 alt="Project 6"
               />
+            </div>
+            <div class="view-more-btn">
+              <button class="btn" id="viewMorePortfolioBtn">
+                Click here to see our work
+              </button>
             </div>
           </div>
         </div>
@@ -323,10 +333,282 @@
       </div>
     </section>
 
+    <!-- Expanded Videos Section (Hidden by default) -->
+    <section class="expanded-section" id="expanded-videos">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our PVC Sheet Video Collection</h2>
+          <p>
+            Watch demonstrations, installations, and reviews of our products
+          </p>
+        </div>
+
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">
+            All Videos
+          </button>
+          <button class="filter-btn" data-filter="installation">
+            Installation
+          </button>
+          <button class="filter-btn" data-filter="review">
+            Product Reviews
+          </button>
+          <button class="filter-btn" data-filter="diy">DIY Guides</button>
+        </div>
+
+        <div class="expanded-video-grid">
+          <div
+            class="expanded-video-item"
+            data-category="installation"
+            data-video="6pxfQLEDj74"
+          >
+            <img
+              src="https://img.youtube.com/vi/6pxfQLEDj74/maxresdefault.jpg"
+              alt="PVC Sheet Installation Guide"
+            />
+            <div class="video-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <div class="item-info">
+              <h3>PVC Sheet Installation Guide</h3>
+              <p>Step-by-step installation process</p>
+            </div>
+          </div>
+
+          <div
+            class="expanded-video-item"
+            data-category="review"
+            data-video="6M5V6ms6NOU"
+          >
+            <img
+              src="https://img.youtube.com/vi/6M5V6ms6NOU/maxresdefault.jpg"
+              alt="PVC Sheet Product Review"
+            />
+            <div class="video-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <div class="item-info">
+              <h3>Premium PVC Sheet Review</h3>
+              <p>Customer review of our products</p>
+            </div>
+          </div>
+
+          <div
+            class="expanded-video-item"
+            data-category="diy"
+            data-video="3Lrfr0jWo_c"
+          >
+            <img
+              src="https://img.youtube.com/vi/3Lrfr0jWo_c/maxresdefault.jpg"
+              alt="DIY PVC Projects"
+            />
+            <div class="video-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <div class="item-info">
+              <h3>DIY PVC Projects</h3>
+              <p>Creative ideas for your home</p>
+            </div>
+          </div>
+
+          <div
+            class="expanded-video-item"
+            data-category="installation"
+            data-video="c6nB6iHnWf8"
+          >
+            <img
+              src="https://img.youtube.com/vi/c6nB6iHnWf8/maxresdefault.jpg"
+              alt="Bathroom PVC Installation"
+            />
+            <div class="video-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <div class="item-info">
+              <h3>Bathroom PVC Installation</h3>
+              <p>Waterproofing with PVC sheets</p>
+            </div>
+          </div>
+
+          <div
+            class="expanded-video-item"
+            data-category="review"
+            data-video="dQw4w9WgXcQ"
+          >
+            <img
+              src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
+              alt="PVC vs Traditional Materials"
+            />
+            <div class="video-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <div class="item-info">
+              <h3>PVC vs Traditional Materials</h3>
+              <p>Comparison and benefits</p>
+            </div>
+          </div>
+
+          <div
+            class="expanded-video-item"
+            data-category="diy"
+            data-video="jNQXAC9IVRw"
+          >
+            <img
+              src="https://img.youtube.com/vi/jNQXAC9IVRw/maxresdefault.jpg"
+              alt="PVC Furniture Making"
+            />
+            <div class="video-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <div class="item-info">
+              <h3>PVC Furniture Making</h3>
+              <p>Create custom furniture with PVC</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="back-to-tabs">
+          <button class="btn" id="backToVideosTabBtn">
+            Back to Videos Tab
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expanded Portfolio Section (Hidden by default) -->
+    <section class="expanded-section" id="expanded-portfolio">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Completed Projects</h2>
+          <p>
+            Browse through our portfolio of successful PVC sheet installations
+          </p>
+        </div>
+
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="kitchen">Kitchens</button>
+          <button class="filter-btn" data-filter="bathroom">Bathrooms</button>
+          <button class="filter-btn" data-filter="living">Living Areas</button>
+          <button class="filter-btn" data-filter="commercial">
+            Commercial
+          </button>
+        </div>
+
+        <div class="expanded-portfolio-grid">
+          <div class="expanded-portfolio-item" data-category="kitchen">
+            <img
+              src="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              data-highres="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Modern Kitchen with PVC Cabinets"
+            />
+            <div class="portfolio-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+            <div class="item-info">
+              <h3>Modern Kitchen</h3>
+              <p>PVC cabinet installation</p>
+            </div>
+          </div>
+
+          <div class="expanded-portfolio-item" data-category="bathroom">
+            <img
+              src="https://images.unsplash.com/photo-1493663284031-b7e3aaa4c4b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              data-highres="https://images.unsplash.com/photo-1493663284031-b7e3aaa4c4b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Bathroom with PVC Wall Panels"
+            />
+            <div class="portfolio-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+            <div class="item-info">
+              <h3>Luxury Bathroom</h3>
+              <p>Waterproof PVC wall panels</p>
+            </div>
+          </div>
+
+          <div class="expanded-portfolio-item" data-category="living">
+            <img
+              src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              data-highres="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Living Room PVC Ceiling"
+            />
+            <div class="portfolio-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+            <div class="item-info">
+              <h3>Living Room</h3>
+              <p>Elegant PVC ceiling design</p>
+            </div>
+          </div>
+
+          <div class="expanded-portfolio-item" data-category="commercial">
+            <img
+              src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              data-highres="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Office Partition with PVC Sheets"
+            />
+            <div class="portfolio-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+            <div class="item-info">
+              <h3>Office Space</h3>
+              <p>PVC partition walls</p>
+            </div>
+          </div>
+
+          <div class="expanded-portfolio-item" data-category="kitchen">
+            <img
+              src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              data-highres="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="PVC Wardrobe Design"
+            />
+            <div class="portfolio-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+            <div class="item-info">
+              <h3>Walk-in Wardrobe</h3>
+              <p>Custom PVC wardrobe design</p>
+            </div>
+          </div>
+
+          <div class="expanded-portfolio-item" data-category="bathroom">
+            <img
+              src="https://images.unsplash.com/photo-1560448076-3f6f44b6b4d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              data-highres="https://images.unsplash.com/photo-1560448076-3f6f44b6b4d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="PVC Wall Cladding"
+            />
+            <div class="portfolio-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+            <div class="item-info">
+              <h3>Bathroom Cladding</h3>
+              <p>Complete PVC wall cladding</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="back-to-tabs">
+          <button class="btn" id="backToPortfolioTabBtn">
+            Back to Portfolio Tab
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- Image Modal -->
     <div id="imageModal" class="modal">
       <span class="close-modal" id="closeModal">&times;</span>
       <img class="modal-content" id="modalImage" />
+      <div id="modalCaption" class="modal-caption"></div>
+    </div>
+
+    <!-- Image/Video Modal -->
+    <div id="mediaModal" class="modal">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <div class="modal-content" id="modalMedia">
+        <!-- Content will be inserted here dynamically -->
+      </div>
       <div id="modalCaption" class="modal-caption"></div>
     </div>
 
