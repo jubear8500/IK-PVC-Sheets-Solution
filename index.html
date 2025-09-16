@@ -33,6 +33,7 @@
         <nav>
           <ul>
             <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#videos">Videos</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -50,12 +51,12 @@
           High-quality, durable, and beautiful PVC solutions for your home
           interiors
         </p>
-        <!-- <a href="#contact" class="btn">Get a Free Quote</a> -->
+        <a href="tel:+917893211662" class="btn">Feel free to contact</a>
       </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section class="features" id="features">
       <div class="container">
         <h2>Why Choose Our PVC Sheets?</h2>
         <div class="features-grid">
@@ -135,11 +136,9 @@
                 alt="PVC Sheet Design 6"
               />
             </div>
-            <div class="image-grid">
-              <button>
-                <a class="pics" href="pics.html" target="_blank">
-                  CLICK HERE FOR MORE IMAGES
-                </a>
+            <div class="view-more-btn">
+              <button class="btn" id="viewMoreBtn">
+                Click here for more images
               </button>
             </div>
           </div>
@@ -149,22 +148,19 @@
             <h3>PVC Sheet Demonstrations</h3>
             <div class="video-grid">
               <div class="video-item">
-                <iframe
-                  src="https://www.youtube.com/embed/6pxfQLEDj74"
-                  allowfullscreen
-                ></iframe>
+                <iframe src="/video/v1.mp4" allowfullscreen></iframe>
               </div>
               <div class="video-item">
-                <iframe
-                  src="https://www.youtube.com/embed/6M5V6ms6NOU"
-                  allowfullscreen
-                ></iframe>
+                <iframe src="" allowfullscreen></iframe>
               </div>
               <div class="video-item">
-                <iframe
-                  src="https://www.youtube.com/embed/3Lrfr0jWo_c"
-                  allowfullscreen
-                ></iframe>
+                <iframe src="" allowfullscreen></iframe>
+              </div>
+              <div class="video-item">
+                <iframe src="" allowfullscreen></iframe>
+              </div>
+              <div class="video-item">
+                <iframe src="" allowfullscreen></iframe>
               </div>
             </div>
           </div>
@@ -202,6 +198,137 @@
         </div>
       </div>
     </section>
+
+    <!-- Expanded Gallery Section (Hidden by default) -->
+    <section class="expanded-gallery" id="expanded-gallery">
+      <div class="container">
+        <div class="gallery-header">
+          <h2>Our PVC Sheet Collection</h2>
+          <p>Browse our complete range of styles and designs</p>
+        </div>
+
+        <div class="gallery-filter">
+          <button class="filter-btn active" data-filter="all">
+            All Designs
+          </button>
+          <button class="filter-btn" data-filter="modern">Modern</button>
+          <button class="filter-btn" data-filter="wood">Wood Textures</button>
+          <button class="filter-btn" data-filter="marble">
+            Marble Patterns
+          </button>
+          <button class="filter-btn" data-filter="solid">Solid Colors</button>
+        </div>
+
+        <div class="expanded-image-grid">
+          <div class="expanded-image-item" data-category="modern">
+            <img
+              src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              data-highres="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Modern White PVC Sheet Design"
+            />
+            <div class="image-overlay">
+              <h3>Modern White</h3>
+              <p>Sleek and contemporary design</p>
+            </div>
+          </div>
+
+          <div class="expanded-image-item" data-category="wood">
+            <img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              data-highres="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Wood Texture PVC Sheet"
+            />
+            <div class="image-overlay">
+              <h3>Oak Wood Texture</h3>
+              <p>Natural wood appearance</p>
+            </div>
+          </div>
+
+          <div class="expanded-image-item" data-category="marble">
+            <img
+              src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              data-highres="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Marble Pattern PVC Sheet"
+            />
+            <div class="image-overlay">
+              <h3>Carrara Marble</h3>
+              <p>Elegant marble pattern</p>
+            </div>
+          </div>
+
+          <div class="expanded-image-item" data-category="wood">
+            <img
+              src="https://images.unsplash.com/photo-1560448076-3f6f44b6b4d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              data-highres="https://images.unsplash.com/photo-1560448076-3f6f44b6b4d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Classic Brown PVC Panel"
+            />
+            <div class="image-overlay">
+              <h3>Walnut Finish</h3>
+              <p>Rich brown wood texture</p>
+            </div>
+          </div>
+
+          <div class="expanded-image-item" data-category="solid">
+            <img
+              src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              data-highres="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Gray Textured PVC Sheet"
+            />
+            <div class="image-overlay">
+              <h3>Slate Gray</h3>
+              <p>Modern solid color option</p>
+            </div>
+          </div>
+
+          <div class="expanded-image-item" data-category="modern">
+            <img
+              src="https://images.unsplash.com/photo-1593085260707-5377ba37f868?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              data-highres="https://images.unsplash.com/photo-1593085260707-5377ba37f868?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Luxury Gold PVC Design"
+            />
+            <div class="image-overlay">
+              <h3>Metallic Gold</h3>
+              <p>Luxury metallic finish</p>
+            </div>
+          </div>
+
+          <div class="expanded-image-item" data-category="marble">
+            <img
+              src="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              data-highres="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Modern Kitchen with PVC Cabinets"
+            />
+            <div class="image-overlay">
+              <h3>Calacatta Marble</h3>
+              <p>Premium marble design</p>
+            </div>
+          </div>
+
+          <div class="expanded-image-item" data-category="wood">
+            <img
+              src="https://images.unsplash.com/photo-1493663284031-b7e3aaa4c4b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              data-highres="https://images.unsplash.com/photo-1493663284031-b7e3aaa4c4b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Bathroom with PVC Wall Panels"
+            />
+            <div class="image-overlay">
+              <h3>Teak Wood</h3>
+              <p>Durable wood alternative</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="back-to-tabs">
+          <button class="btn" id="backToTabsBtn">Back to Main Gallery</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <img class="modal-content" id="modalImage" />
+      <div id="modalCaption" class="modal-caption"></div>
+    </div>
 
     <!-- Contact Section -->
     <!-- <section class="contact" id="contact">
@@ -281,5 +408,10 @@
         </div>
       </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
   </body>
 </html>
