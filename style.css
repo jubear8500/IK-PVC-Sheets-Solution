@@ -583,10 +583,10 @@ nav ul li a:hover {
   color: white;
 }
 
-.expanded-video-item:hover .video-overlay,
+/* .expanded-video-item:hover .video-overlay,
 .expanded-portfolio-item:hover .portfolio-overlay {
-  opacity: 1;
-}
+  opacity: 5;
+} */
 
 .item-info {
   position: absolute;
@@ -596,6 +596,9 @@ nav ul li a:hover {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
   padding: 15px;
   color: white;
+
+  opacity: 1;
+  /* transition: opacity 0.3s ease; */
 }
 
 .back-to-tabs {
