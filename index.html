@@ -120,11 +120,11 @@
               <div class="video-item">
                 <iframe src="" allowfullscreen></iframe>
               </div>
-              <div class="view-more-btn">
-                <button class="btn" id="viewMoreVideosBtn">
-                  Click here for more videos
-                </button>
-              </div>
+            </div>
+            <div class="view-more-btn">
+              <button class="btn" id="viewMoreVideosBtn">
+                Click here for more videos
+              </button>
             </div>
           </div>
 
@@ -568,6 +568,17 @@
         <!-- Content will be inserted here dynamically -->
       </div>
       <div id="modalCaption" class="modal-caption"></div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+      <span class="close-modal" id="closeVideoModal">&times;</span>
+      <div class="modal-video-content">
+        <iframe id="modalVideo" controls>
+          Your browser does not support the video tag.
+        </iframe>
+      </div>
+      <div id="videoModalCaption" class="modal-caption"></div>
     </div>
 
     <!-- Features Section -->

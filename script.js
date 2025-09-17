@@ -1,183 +1,341 @@
-// Tab functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const tabBtns = document.querySelectorAll(".tab-btn");
-        const tabPanes = document.querySelectorAll(".tab-pane");
+ // Tab functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const tabBtns = document.querySelectorAll(".tab-btn");
+  const tabPanes = document.querySelectorAll(".tab-pane");
 
-        tabBtns.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            // Remove active class from all buttons and panes
-            tabBtns.forEach((b) => b.classList.remove("active"));
-            tabPanes.forEach((p) => p.classList.remove("active"));
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Remove active class from all buttons and panes
+      tabBtns.forEach((b) => b.classList.remove("active"));
+      tabPanes.forEach((p) => p.classList.remove("active"));
 
-            // Add active class to clicked button
-            btn.classList.add("active");
+      // Add active class to clicked button
+      btn.classList.add("active");
 
-            // Show corresponding tab pane
-            const tabId = btn.getAttribute("data-tab");
-            document.getElementById(`${tabId}-tab`).classList.add("active");
-          });
-        });
+      // Show corresponding tab pane
+      const tabId = btn.getAttribute("data-tab");
+      document.getElementById(`${tabId}-tab`).classList.add("active");
+    });
+  });
 
-        // View More Images Button
-        const viewMoreBtn = document.getElementById("viewMoreBtn");
-        const expandedGallery = document.getElementById("expanded-gallery");
-        const tabsSection = document.getElementById("gallery");
+  // View More Images Button
+  const viewMoreBtn = document.getElementById("viewMoreBtn");
+  const expandedGallery = document.getElementById("expanded-gallery");
+  const tabsSection = document.getElementById("gallery");
 
-        if (viewMoreBtn && expandedGallery) {
-          viewMoreBtn.addEventListener("click", function () {
-            tabsSection.style.display = "none";
-            expandedGallery.style.display = "block";
+  if (viewMoreBtn && expandedGallery) {
+    viewMoreBtn.addEventListener("click", function () {
+      tabsSection.style.display = "none";
+      expandedGallery.style.display = "block";
 
-            // Smooth scroll to the expanded gallery
-            window.scrollTo({
-              top: expandedGallery.offsetTop - 80,
-              behavior: "smooth",
-            });
-          });
-        }
+      // Smooth scroll to the expanded gallery
+      window.scrollTo({
+        top: expandedGallery.offsetTop - 80,
+        behavior: "smooth",
+      });
+    });
+  }
 
-        // Back to Tabs Button
-        const backToTabsBtn = document.getElementById("backToTabsBtn");
+  // View More Videos Button
+  const viewMoreVideosBtn = document.getElementById("viewMoreVideosBtn");
+  const expandedVideos = document.getElementById("expanded-videos");
 
-        if (backToTabsBtn && expandedGallery) {
-          backToTabsBtn.addEventListener("click", function () {
-            expandedGallery.style.display = "none";
-            tabsSection.style.display = "block";
+  if (viewMoreVideosBtn && expandedVideos) {
+    viewMoreVideosBtn.addEventListener("click", function () {
+      tabsSection.style.display = "none";
+      expandedVideos.style.display = "block";
 
-            // Smooth scroll back to the tabs section
-            window.scrollTo({
-              top: tabsSection.offsetTop - 80,
-              behavior: "smooth",
-            });
-          });
-        }
+      // Smooth scroll to the expanded videos section
+      window.scrollTo({
+        top: expandedVideos.offsetTop - 80,
+        behavior: "smooth",
+      });
+    });
+  }
 
-        // Image Modal functionality
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImage");
-        const captionText = document.getElementById("modalCaption");
-        const closeModal = document.getElementById("closeModal");
+  // View More Portfolio Button
+  const viewMorePortfolioBtn = document.getElementById("viewMorePortfolioBtn");
+  const expandedPortfolio = document.getElementById("expanded-portfolio");
 
-        // Get all gallery images
-        const galleryImages = document.querySelectorAll(
-          ".expanded-image-item img"
-        );
+  if (viewMorePortfolioBtn && expandedPortfolio) {
+    viewMorePortfolioBtn.addEventListener("click", function () {
+      tabsSection.style.display = "none";
+      expandedPortfolio.style.display = "block";
 
-        galleryImages.forEach((img) => {
-          img.addEventListener("click", function () {
-            modal.style.display = "block";
-            modalImg.src = this.getAttribute("data-highres");
-            captionText.innerHTML = this.alt;
-          });
-        });
+      // Smooth scroll to the expanded portfolio section
+      window.scrollTo({
+        top: expandedPortfolio.offsetTop - 80,
+        behavior: "smooth",
+      });
+    });
+  }
 
-        // Close modal when clicking on X
-        if (closeModal) {
-          closeModal.addEventListener("click", function () {
-            modal.style.display = "none";
-          });
-        }
+  // Back to Tabs Buttons
+  const backToTabsBtn = document.getElementById("backToTabsBtn");
+  const backToVideosTabBtn = document.getElementById("backToVideosTabBtn");
+  const backToPortfolioTabBtn = document.getElementById("backToPortfolioTabBtn");
 
-        // Close modal when clicking outside the image
-        window.addEventListener("click", function (event) {
-          if (event.target === modal) {
-            modal.style.display = "none";
-          }
-        });
+  if (backToTabsBtn && expandedGallery) {
+    backToTabsBtn.addEventListener("click", function () {
+      expandedGallery.style.display = "none";
+      tabsSection.style.display = "block";
 
-        // Gallery filtering
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        const galleryItems = document.querySelectorAll(".expanded-image-item");
+      // Switch to images tab
+      tabBtns.forEach((b) => b.classList.remove("active"));
+      document.querySelector('[data-tab="images"]').classList.add("active");
+      tabPanes.forEach((p) => p.classList.remove("active"));
+      document.getElementById("images-tab").classList.add("active");
 
-        filterBtns.forEach((btn) => {
-          btn.addEventListener("click", function () {
-            // Remove active class from all buttons
-            filterBtns.forEach((b) => b.classList.remove("active"));
+      // Smooth scroll back to the tabs section
+      window.scrollTo({
+        top: tabsSection.offsetTop - 80,
+        behavior: "smooth",
+      });
+    });
+  }
 
-            // Add active class to clicked button
-            this.classList.add("active");
+  if (backToVideosTabBtn && expandedVideos) {
+    backToVideosTabBtn.addEventListener("click", function () {
+      expandedVideos.style.display = "none";
+      tabsSection.style.display = "block";
 
-            // Get filter value
-            const filterValue = this.getAttribute("data-filter");
+      // Switch to videos tab
+      tabBtns.forEach((b) => b.classList.remove("active"));
+      document.querySelector('[data-tab="videos"]').classList.add("active");
+      tabPanes.forEach((p) => p.classList.remove("active"));
+      document.getElementById("videos-tab").classList.add("active");
 
-            // Show or hide gallery items based on filter
-            galleryItems.forEach((item) => {
-              if (
-                filterValue === "all" ||
-                item.getAttribute("data-category") === filterValue
-              ) {
-                item.style.display = "block";
-              } else {
-                item.style.display = "none";
-              }
-            });
-          });
-        });
+      // Smooth scroll back to the tabs section
+      window.scrollTo({
+        top: tabsSection.offsetTop - 80,
+        behavior: "smooth",
+      });
+    });
+  }
 
-        // Form submission
-        const contactForm = document.getElementById("contactForm");
-        if (contactForm) {
-          contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            alert("Thank you for your message! We will contact you soon.");
-            contactForm.reset();
-          });
-        }
+  if (backToPortfolioTabBtn && expandedPortfolio) {
+    backToPortfolioTabBtn.addEventListener("click", function () {
+      expandedPortfolio.style.display = "none";
+      tabsSection.style.display = "block";
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll("nav a").forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href");
+      // Switch to portfolio tab
+      tabBtns.forEach((b) => b.classList.remove("active"));
+      document.querySelector('[data-tab="portfolio"]').classList.add("active");
+      tabPanes.forEach((p) => p.classList.remove("active"));
+      document.getElementById("portfolio-tab").classList.add("active");
 
-            if (targetId === "#gallery") {
-              // Special handling for gallery link
-              expandedGallery.style.display = "none";
-              tabsSection.style.display = "block";
-            }
+      // Smooth scroll back to the tabs section
+      window.scrollTo({
+        top: tabsSection.offsetTop - 80,
+        behavior: "smooth",
+      });
+    });
+  }
 
-            const targetElement = document.querySelector(targetId);
+  // Image Modal functionality
+  const imageModal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const captionText = document.getElementById("modalCaption");
+  const closeModal = document.getElementById("closeModal");
 
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: "smooth",
-            });
+  // Get all gallery images
+  const galleryImages = document.querySelectorAll(
+    ".expanded-image-item img, .expanded-portfolio-item img"
+  );
 
-            // Close mobile menu if open
-            const mainNav = document.getElementById("mainNav");
-            if (mainNav.classList.contains("active")) {
-              mainNav.classList.remove("active");
-            }
-          });
-        });
+  galleryImages.forEach((img) => {
+    img.addEventListener("click", function () {
+      imageModal.style.display = "block";
+      modalImg.src = this.getAttribute("data-highres") || this.src;
+      captionText.innerHTML = this.alt;
+    });
+  });
 
-        // Mobile menu toggle
-        const menuToggle = document.getElementById("menuToggle");
-        const mainNav = document.getElementById("mainNav");
+  // Close modal when clicking on X
+  if (closeModal) {
+    closeModal.addEventListener("click", function () {
+      imageModal.style.display = "none";
+    });
+  }
 
-        if (menuToggle && mainNav) {
-          menuToggle.addEventListener("click", function () {
-            mainNav.classList.toggle("active");
-          });
-        }
+  // Close modal when clicking outside the image
+  window.addEventListener("click", function (event) {
+    if (event.target === imageModal) {
+      imageModal.style.display = "none";
+    }
+  });
 
-        // Back to top button
-        const backToTopBtn = document.getElementById("backToTop");
+  // Video Modal functionality
+  const videoModal = document.getElementById("videoModal");
+  const modalVideo = document.getElementById("modalVideo");
+  const videoCaption = document.getElementById("videoModalCaption");
+  const closeVideoModal = document.getElementById("closeVideoModal");
 
-        window.addEventListener("scroll", function () {
-          if (window.pageYOffset > 300) {
-            backToTopBtn.classList.add("visible");
-          } else {
-            backToTopBtn.classList.remove("visible");
-          }
-        });
+  // Get all video items
+  const videoItems = document.querySelectorAll(".expanded-video-item");
 
-        if (backToTopBtn) {
-          backToTopBtn.addEventListener("click", function () {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          });
+  videoItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const videoSrc = this.getAttribute("data-video");
+      const title = this.querySelector("h3").textContent;
+      const description = this.querySelector("p").textContent;
+      
+      videoModal.style.display = "block";
+      modalVideo.src = videoSrc;
+      videoCaption.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+      
+      // Play the video
+      setTimeout(() => {
+        modalVideo.play();
+      }, 300);
+    });
+  });
+
+  // Close video modal when clicking on X
+  if (closeVideoModal) {
+    closeVideoModal.addEventListener("click", function () {
+      videoModal.style.display = "none";
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
+    });
+  }
+
+  // Close video modal when clicking outside
+  window.addEventListener("click", function (event) {
+    if (event.target === videoModal) {
+      videoModal.style.display = "none";
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
+    }
+  });
+
+  // Gallery filtering for images
+  const imageFilterBtns = document.querySelectorAll("#expanded-gallery .filter-btn");
+  const imageItems = document.querySelectorAll("#expanded-gallery .expanded-image-item");
+
+  imageFilterBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // Remove active class from all buttons
+      imageFilterBtns.forEach((b) => b.classList.remove("active"));
+
+      // Add active class to clicked button
+      this.classList.add("active");
+
+      // Get filter value
+      const filterValue = this.getAttribute("data-filter");
+
+      // Show or hide image items based on filter
+      imageItems.forEach((item) => {
+        if (
+          filterValue === "all" ||
+          item.getAttribute("data-category") === filterValue
+        ) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
         }
       });
+    });
+  });
+
+  // Gallery filtering for videos
+  const videoFilterBtns = document.querySelectorAll("#expanded-videos .filter-btn");
+  const videoItemsAll = document.querySelectorAll("#expanded-videos .expanded-video-item");
+
+  videoFilterBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // Remove active class from all buttons
+      videoFilterBtns.forEach((b) => b.classList.remove("active"));
+
+      // Add active class to clicked button
+      this.classList.add("active");
+
+      // Get filter value
+      const filterValue = this.getAttribute("data-filter");
+
+      // Show or hide video items based on filter
+      videoItemsAll.forEach((item) => {
+        if (
+          filterValue === "all" ||
+          item.getAttribute("data-category") === filterValue
+        ) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // Gallery filtering for portfolio
+  const portfolioFilterBtns = document.querySelectorAll("#expanded-portfolio .filter-btn");
+  const portfolioItemsAll = document.querySelectorAll("#expanded-portfolio .expanded-portfolio-item");
+
+  portfolioFilterBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // Remove active class from all buttons
+      portfolioFilterBtns.forEach((b) => b.classList.remove("active"));
+
+      // Add active class to clicked button
+      this.classList.add("active");
+
+      // Get filter value
+      const filterValue = this.getAttribute("data-filter");
+
+      // Show or hide portfolio items based on filter
+      portfolioItemsAll.forEach((item) => {
+        if (
+          filterValue === "all" ||
+          item.getAttribute("data-category") === filterValue
+        ) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // Smooth scrolling for navigation links
+  document.querySelectorAll("nav a").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+
+      // Hide any expanded sections
+      document.querySelectorAll(".expanded-gallery, .expanded-section").forEach(section => {
+        section.style.display = "none";
+      });
+
+      // Show the tabs section
+      tabsSection.style.display = "block";
+
+      const targetElement = document.querySelector(targetId);
+
+      window.scrollTo({
+        top: targetElement.offsetTop - 80,
+        behavior: "smooth",
+      });
+    });
+  });
+
+  // Back to top button
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  });
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+});

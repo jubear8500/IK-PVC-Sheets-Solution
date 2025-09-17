@@ -303,6 +303,8 @@ nav ul li a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .video-item {
@@ -405,6 +407,21 @@ nav ul li a:hover {
   text-align: center;
   color: #ccc;
   padding: 10px 0;
+}
+
+.modal-video-content {
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 800px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-video-content iframe {
+  width: 100%;
+  border-radius: 8px;
 }
 
 /* Expanded Gallery Styles */
@@ -531,6 +548,17 @@ nav ul li a:hover {
 
 .expanded-video-item:hover img,
 .expanded-portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.expanded-video-item video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.expanded-video-item:hover video {
   transform: scale(1.1);
 }
 
